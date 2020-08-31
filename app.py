@@ -32,13 +32,63 @@ posts = [
     }
 ]
 
+# images = [
+#     {
+#         'title': '첫 번째 포스트',
+#         'content': '첫 번째 포스트 내용입니다.',
+#         'source' : "https://placeimg.com/640/320/any/1"
+#     },  
+#     {
+#         'title': '두 번째 포스트',
+#         'content': '두 번째 포스트 내용입니다.',
+#         'source' : "https://placeimg.com/640/320/any/2"
+#     },    
+#     {
+#         'title': '세 번째 포스트',
+#         'content': '세 번째 포스트 내용입니다.',
+#         'source' : "https://placeimg.com/640/320/any/3"
+#     },
+#     {
+#         'title': '네 번째 포스트',
+#         'content': '네 번째 포스트 내용입니다.',
+#         'source' : "https://placeimg.com/640/320/any/4"
+#     },
+#     {
+#         'title': '다섯 번째 포스트',
+#         'content': '다섯 번째 포스트 내용입니다.',
+#         'source' : "https://placeimg.com/640/320/any/5"
+#     }                  
+# ]
+
+images = [
+    {
+        'title': '첫 번째 포스트',
+        'content': '첫 번째 포스트 내용입니다.',
+        'source' : "../static/images/bg1.jpg"
+    },  
+    {
+        'title': '두 번째 포스트',
+        'content': '두 번째 포스트 내용입니다.',
+        'source' : "../static/images/bg2.jpg"
+    },    
+    {
+        'title': '세 번째 포스트',
+        'content': '세 번째 포스트 내용입니다.',
+        'source' : "../static/images/bg3.jpg"
+    }  
+]
+
 @app.route("/home")
 def home():
     return render_template("home.html", title="Home", posts=posts)
 
 @app.route("/about")
 def about():
-    return render_template("about.html", title="About")
+    return render_template("about.html", title="About Page")
+
+@app.route("/carousel")
+def carousel():
+    return render_template("carousel.html", images=images)
 
 @app.route('/login')
 @app.route('/login/<username>')

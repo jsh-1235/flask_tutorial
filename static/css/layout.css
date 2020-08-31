@@ -1,17 +1,11 @@
 html {
     position: relative;
-    min-height: 100%;
-}
-
-body {
-    padding-top: 0px;
 }
 
 #page_title {
-    color: yellowgreen;
-    font-size: 64px;
-}
-
-p {
-    color: hotpink;
+    color: black;
+    font-size: 32px;
+    margin-top: 64px;
+    margin-bottom: 0px;
+    text-align: center;
 }
