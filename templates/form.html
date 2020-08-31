@@ -1,0 +1,53 @@
+{% extends 'layout.html' %}
+
+{% block stylesheet %}
+<style>
+    label {
+        margin: 10px;
+        font-size: 24px;        
+    }
+
+    input {
+        padding: 10px;
+        font-size: 24px;
+        margin: 10px;
+    }
+
+    button {
+        padding: 10px;
+        font-size: 24px;
+        margin: 10px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div>
+    <form action="/form" method="post">
+        <div>
+            <label for="formGroupExampleInput">평균 온도</label>
+            <input type="text" name="avg_temp" class="form-control" id="formGroupExampleInput"
+                placeholder="평균 온도를 입력하세요." /></div>
+        <div>
+            <label for="formGroupExampleInput">최소 온도</label>
+            <input type="text" name="min_temp" class="form-control" id="formGroupExampleInput"
+                placeholder="최소 온도를 입력하세요." /></div>
+        <div>
+            <label for="formGroupExampleInput">최대 온도</label>
+            <input type="text" name="max_temp" class="form-control" id="formGroupExampleInput"
+                placeholder="최대 온도를 입력하세요." /></div>
+        <div>
+            <label for="formGroupExampleInput">강수량</label>
+            <input type="text" name="rain_fall" class="form-control" id="formGroupExampleInput"
+                placeholder="강수량을 입력하세요." /></div>
+        <button type="submit">예측하기</button>
+    </form>
+</div>
+<div>
+    <ul>
+        {% for input in inputs %}
+        <li>{{input}}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
