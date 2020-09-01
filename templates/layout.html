@@ -19,6 +19,11 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/layout.css') }}">
 
     {% block stylesheet %}{% endblock %}
+    <style>
+        #horizontal-list-group {
+            flex-direction: row;
+        }
+    </style>
 </head>
 
 <body>
@@ -33,15 +38,18 @@
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
                         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>                   
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="{{url_for('about')}}">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="{{url_for('table')}}">Table</a>
+                        <a class="nav-link" href="{{url_for('about')}}">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="{{url_for('carousel')}}">Carousel</a>
+                        <a class="nav-link" href="{{url_for('carousel')}}">Carousel</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url_for('table')}}">Table</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="{{url_for('list')}}">List</a>
                     </li>
                 </ul>
                 <form class="form-inline mt-2 mt-md-0">
@@ -52,7 +60,7 @@
         </nav>
     </header>
 
-    <main role="main"> 
+    <main role="main">
         {% block content %}{% endblock %}
     </main>
 
@@ -67,6 +75,57 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function () {
+            var title = "";
+
+            $('#btnHTML').click(function () {
+                console.log($(this).text())
+
+                //title = $(this).attr("id");                            
+                title = $(this).text();
+            });
+
+            $('#btnCSS').click(function () {
+                title = $(this).text();
+
+                $('#exampleModal').modal('show')
+            });
+
+            $('#btnJS').click(function () {
+                title = $(this).text();
+
+                $('#exampleModal').modal('show')
+            });
+
+            $('#btnPython').click(function () {
+                title = $(this).text();
+
+                $('#exampleModal').modal('show')
+            });
+
+            $('#exampleModal').on('show.bs.modal', function (e) {
+                //$("#modalContent").html($(this).attr("id"))
+                $("#modalContent").text(title)
+            })
+
+            //===================================================================================
+            var count = [0, 0, 0];
+
+            $('#list1').click(function () {
+                $('#span1').text(++count[0]);
+            });
+
+            $('#list2').click(function () {
+                $('#span2').text(++count[1]);
+            });
+
+            $('#list3').click(function () {
+                $('#span3').text(++count[2]);
+            });
+        });    
+    </script>
 </body>
 
 </html>

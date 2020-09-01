@@ -148,9 +148,13 @@ def carousel():
 def table():
     return render_template("table.html", images=images)
 
+@app.route("/list")
+def list():
+    return render_template("list.html", images=images)
+
 if __name__ == '__main__':
-    #app.run(debug=True)
-    app.run()
+    app.run(debug=True)
+    #app.run()
     
 # with app.test_request_context():
 #     print(url_for('index'))

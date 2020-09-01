@@ -1,0 +1,100 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p id="modalContent"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal - Static Backdrop -->
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Static Backdrop</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Understood</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="margin-top:56px;">
+    <div class="list-group list-group-flush">
+        <button type="button" class="list-group-item list-group-item-action active" data-toggle="modal"
+            data-target="#staticBackdrop">
+            Program Language
+        </button>
+        <button id="btnHTML" type="button" class="list-group-item list-group-item-action" data-toggle="modal"
+            data-target="#exampleModal">HTML</button>
+        <button id="btnCSS" type="button" class="list-group-item list-group-item-action">CSS</button>
+        <button id="btnJS" type="button" class="list-group-item list-group-item-action">JavaScript</button>
+        <button id="btnPython" type="button" class="list-group-item list-group-item-action" disabled>Python</button>
+    </div>
+    <hr />
+    <div>
+        <ul class="list-group">
+            <li id="list1" class="list-group-item d-flex justify-content-between align-items-center">
+                C#
+                <span id="span1" class="badge badge-primary badge-pill">0</span>
+            </li>
+            <li id="list2" class="list-group-item d-flex justify-content-between align-items-center">
+                C++
+                <span id="span2" class="badge badge-primary badge-pill">0</span>
+            </li>
+            <li id="list3" class="list-group-item d-flex justify-content-between align-items-center">
+                C
+                <span id="span3" class="badge badge-primary badge-pill">0</span>
+            </li>
+        </ul>
+    </div>
+    <hr />
+    <div>
+        <ul class="list-group">
+            <li class="list-group-item">A default list group item</li>
+            <li class="list-group-item list-group-item-primary">A simple primary list group item</li>
+            <li class="list-group-item list-group-item-secondary">A simple secondary list group item</li>
+            <li class="list-group-item list-group-item-success">A simple success list group item</li>
+            <li class="list-group-item list-group-item-danger">A simple danger list group item</li>
+            <li class="list-group-item list-group-item-warning">A simple warning list group item</li>
+            <li class="list-group-item list-group-item-info">A simple info list group item</li>
+            <li class="list-group-item list-group-item-light">A simple light list group item</li>
+            <li class="list-group-item list-group-item-dark">A simple dark list group item</li>
+        </ul>
+    </div>
+    <hr />
+    <div>
+        <ul id="horizontal-list-group" class="list-group list-group-horizontal-sm">
+            <li class="list-group-item">Windows</li>
+            <li class="list-group-item">Android</li>
+            <li class="list-group-item">IOS</li>
+        </ul>
+    </div>
+</div>
+
+{% endblock %}
