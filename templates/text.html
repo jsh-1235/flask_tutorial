@@ -1,0 +1,58 @@
+{% extends 'layout.html' %}
+
+{% block stylesheet %}
+<style>
+    .a_style {
+        font-size: 36pt;
+    }
+</style>
+{% endblock %}
+
+{% block script %}
+<script>
+</script>
+{% endblock %}
+
+{% block content %}
+<div style="margin:100px;">
+    <div>
+        <h1>Example heading <span class="badge badge-secondary">New</span></h1>
+        <h2>Example heading <span class="badge badge-secondary">New</span></h2>
+        <h3>Example heading <span class="badge badge-secondary">New</span></h3>
+        <h4>Example heading <span class="badge badge-secondary">New</span></h4>
+        <h5>Example heading <span class="badge badge-secondary">New</span></h5>
+        <h6>Example heading <span class="badge badge-secondary">New</span></h6>
+    </div>
+    <hr />
+    <div>
+        <a href="#" class="badge badge-primary a_style">Primary</a>
+        <a href="#" class="badge badge-secondary a_style">Secondary</a>
+        <a href="#" class="badge badge-success a_style">Success</a>
+        <a href="#" class="badge badge-danger a_style">Danger</a>
+        <a href="#" class="badge badge-warning a_style">Warning</a>
+        <a href="#" class="badge badge-info a_style">Info</a>
+        <a href="#" class="badge badge-light a_style">Light</a>
+        <a href="#" class="badge badge-dark a_style">Dark</a>
+    </div>
+    <hr />
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page">Home</li>
+        </ol>
+    </nav>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Library</li>
+        </ol>
+    </nav>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Library</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Data</li>
+        </ol>
+    </nav>   
+</div>
+
+{% endblock %}

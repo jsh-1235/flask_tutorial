@@ -1,0 +1,84 @@
+{% extends 'layout.html' %}
+
+{% block stylesheet %}
+<style>
+</style>
+{% endblock %}
+
+{% block script %}
+<script>
+    $(document).ready(function () {
+        $("#btnShow").click(function () {
+            $('.media_visibility').show();
+        })
+
+        $("#btnHide").click(function () {
+            $('.media_visibility').hide();
+        })
+    });
+</script>
+{% endblock %}
+
+{% block content %}
+<div style="margin:100px;">
+    <div class="btn-group" role="group" aria-label="Basic example">
+        <button id="btnShow" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top"
+            title="Tooltip on top">Show</button>
+        <button id="btnHide" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom"
+            title="Tooltip on bottom">Hide</button>
+    </div>
+    <hr />
+    <div class="media media_visibility">
+        <img src="../static/images/bg1.jpg" class="align-self-start mr-3" alt="..." style="width: 50px;">
+        <div class="media-body">
+            <h5 class="mt-0">Start-aligned media</h5>
+            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio,
+            vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec
+            lacinia congue felis in faucibus.
+        </div>
+    </div>
+    <hr />
+    <div class="media media_visibility">
+        <img src="../static/images/bg3.jpg" class="align-self-center mr-3" alt="..." style="width: 50px;">
+        <div class="media-body">
+            <h5 class="mt-0">Center-aligned media</h5>
+            <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus
+                odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
+                fringilla. Donec lacinia congue felis in faucibus.</p>
+            <p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et
+                magnis dis parturient montes, nascetur ridiculus mus.</p>
+        </div>
+    </div>
+    <hr />
+    <div class="media media_visibility">
+        <img src="../static/images/bg2.jpg" class="align-self-end mr-3" alt="..." style="width: 50px;">
+        <div class="media-body">
+            <h5 class="mt-0">End-aligned media</h5>
+            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio,
+            vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec
+            lacinia congue felis in faucibus.
+        </div>
+    </div>
+    <hr />
+    <ul class="list-unstyled">
+        {% for image in images %}
+        <li class="media border-bottom mt-3">
+            <img src="{{ image.source }}" class="mr-3" alt=".{{ image.title }}" style="width: 200px;">
+            <div class="media-body">
+                <h5 class="mt-0 mb-1 font-weight-bold">{{ image.title }}</h5>
+                <p>{{ image.content }}</p>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+    <hr />
+    <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/32si5cfrCNc" allowfullscreen></iframe>
+    </div>
+    <hr />
+    <div class="embed-responsive embed-responsive-4by3 ">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/PlVozOLl21U" allowfullscreen></iframe>
+    </div>
+</div>
+
+{% endblock %}
