@@ -87,10 +87,6 @@ images = [
 def home():
     return render_template("home.html", title="Home", posts=posts)
 
-@app.route("/about")
-def about():
-    return render_template("about.html", title="About Page")
-
 @app.route('/login')
 @app.route('/login/<username>')
 def login(username=None):
@@ -112,33 +108,14 @@ def login(username=None):
 
         return resp
     
-@app.route("/form", methods=['POST', 'GET'])
-def form():
-    inputs = []
-    
-    if request.method == "POST":
-        avg_temp = request.form['avg_temp']
-        min_temp = request.form['min_temp']
-        max_temp = request.form['max_temp']
-        rain_fall = request.form['rain_fall']
-
-        inputs.clear()
-        inputs.append(avg_temp)
-        inputs.append(min_temp)
-        inputs.append(max_temp)
-        inputs.append(rain_fall)                      
-          
-        print("{0} {1} {2} {3}".format(avg_temp, min_temp, max_temp, rain_fall))                
-    else:
-        print("Get Request")
-        
-    return render_template("form.html", title="Form", inputs=inputs)
-    
 
 @app.route('/user/<username>')
 def profile(username):
     return '{}\'s profile'.format(escape(username))
 
+@app.route("/about")
+def about():
+    return render_template("about.html", title="About Page")
 
 @app.route("/carousel")
 def carousel():
@@ -150,7 +127,29 @@ def table():
 
 @app.route("/list")
 def list():
-    return render_template("list.html", images=images)
+    return render_template("list.html")
+
+@app.route("/components")
+def components():
+    return render_template("components.html")
+
+@app.route("/form", methods=['POST', 'GET'])
+def form():
+    inputs = []
+    
+    if request.method == "POST":
+        email = request.form['exampleInputEmail']
+        password = request.form['exampleInputPassword']
+
+        inputs.clear()
+        inputs.append(email)
+        inputs.append(password)
+          
+        print("{0} {1}".format(email, password))                
+    else:
+        print("Get Request")
+        
+    return render_template("form.html", title="Form", inputs=inputs)
 
 if __name__ == '__main__':
     app.run(debug=True)
