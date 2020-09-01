@@ -22,17 +22,7 @@
 </head>
 
 <body>
-    <!-- <header class="site-header">
-        <nav class="navbar navbar-dark bg-primary">
-            <a class="navbar-brand" href="{{url_for('index')}}">Index</a>
-            <a class="navbar-brand" href="{{url_for('home')}}">Home</a>
-            <a class="navbar-brand" href="{{url_for('about')}}">About</a>
-            <a class="navbar-brand" href="{{url_for('login')}}">Login</a>
-            <a class="navbar-brand" href="{{url_for('form')}}">Form</a>
-        </nav>
-    </header> -->
-
-    <header class="site-header">
+    <header role="header">
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
             <a class="navbar-brand" href="#">Navbar</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
@@ -43,15 +33,12 @@
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
                         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
-                    </li>
+                    </li>                   
                     <li class="nav-item">
                         <a class="nav-link disabled" href="{{url_for('about')}}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="{{url_for('table')}}">Table</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link disabled" href="{{url_for('carousel')}}">Carousel</a>
@@ -65,7 +52,7 @@
         </nav>
     </header>
 
-    <main role="main" class="container-fluid">
+    <main role="main"> 
         {% block content %}{% endblock %}
     </main>
 
