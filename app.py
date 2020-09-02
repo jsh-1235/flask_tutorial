@@ -65,50 +65,53 @@ images = [
     }
 ]
 
-# images = [
-#     {
-#         'title': '첫 번째 포스트',
-#         'content': '첫 번째 포스트 내용입니다.',
-#         'source' : "../static/images/bg1.jpg"
-#     },
-#     {
-#         'title': '두 번째 포스트',
-#         'content': '두 번째 포스트 내용입니다.',
-#         'source' : "../static/images/bg2.jpg"
-#     },
-#     {
-#         'title': '세 번째 포스트',
-#         'content': '세 번째 포스트 내용입니다.',
-#         'source' : "../static/images/bg3.jpg"
-#     }
-# ]
 
 @app.route("/")
 @app.route("/index")
 def index():
     return render_template('index.html')
 
-@app.route('/login')
-@app.route('/login/<username>')
-def login(username=None):
-    if username == None:
-        name = request.cookies.get('username')
 
-        if name == None:
-            resp = make_response(render_template(
-                'login.html', username="None"))
-            print("User name is {0}.".format("None"))
-        else:
-            resp = make_response(render_template('login.html', username=name))
-            print("User name is {0}.".format(name))
+# @app.route('/login')
+# @app.route('/login/<username>')
+# def login(username=None):
+#     if username == None:
+#         name = request.cookies.get('username')
 
-        return resp
+#         if name == None:
+#             resp = make_response(render_template(
+#                 'login.html', username="None"))
+#             print("User name is {0}.".format("None"))
+#         else:
+#             resp = make_response(render_template('login.html', username=name))
+#             print("User name is {0}.".format(name))
+
+#         return resp
+#     else:
+#         resp = make_response(render_template('login.html', username=username))
+
+#         resp.set_cookie('username', username)
+
+#         return resp
+
+@app.route("/login", methods=['POST', 'GET'])
+def login(email=None):
+    email = ""
+    password = ""
+
+    if request.method == "POST":
+        email = request.form['email']
+        password = request.form['password']
+
+        password = "[" + password + "]"
+
+        print("{0} {1}".format(email, password))
+
+        return render_template("index.html", email=email, password=password)
     else:
-        resp = make_response(render_template('login.html', username=username))
+        print("Get Request")
 
-        resp.set_cookie('username', username)
-
-        return resp
+        return render_template("login.html", email=email, password=password)
 
 
 @app.route('/user/<username>')
@@ -131,6 +134,11 @@ def list():
     return render_template("list.html")
 
 
+@app.route("/card")
+def card():
+    return render_template("card.html", images=images)
+
+
 @app.route("/form", methods=['POST', 'GET'])
 def form():
     inputs = []
@@ -150,18 +158,9 @@ def form():
     return render_template("form.html", title="Form", inputs=inputs)
 
 
-@app.route("/components")
-def components():
-    return render_template("components.html")
-
-
 @app.route("/media")
 def media():
     return render_template("media.html", images=images)
-
-@app.route("/card")
-def card():
-    return render_template("card.html", images=images)
 
 
 @app.route("/navs")
@@ -169,14 +168,39 @@ def navs():
     return render_template("navs.html")
 
 
+@app.route("/scrollspy")
+def scrollspy():
+    return render_template("scrollspy.html")
+
+
 @app.route("/collapse")
 def collapse():
     return render_template("collapse.html")
 
 
-@app.route("/popovers")
-def popovers():
-    return render_template("popovers.html")
+@app.route("/pagination")
+def pagination():
+    return render_template("pagination.html")
+
+
+@app.route("/jumbotron")
+def jumbotron():
+    return render_template("jumbotron.html")
+
+
+@app.route("/breadcrumb")
+def breadcrumb():
+    return render_template("breadcrumb.html")
+
+
+@app.route("/button")
+def button():
+    return render_template("button.html")
+
+
+@app.route("/dropdowns")
+def dropdowns():
+    return render_template("dropdowns.html")
 
 
 @app.route("/progress")
@@ -194,14 +218,9 @@ def badge():
     return render_template("badge.html")
 
 
-@app.route("/pagination")
-def pagination():
-    return render_template("pagination.html")
-
-
-@app.route("/scrollspy")
-def scrollspy():
-    return render_template("scrollspy.html")
+@app.route("/alert")
+def alert():
+    return render_template("alert.html")
 
 
 @app.route("/toasts")
@@ -214,29 +233,9 @@ def tooltips():
     return render_template("tooltips.html")
 
 
-@app.route("/alert")
-def alert():
-    return render_template("alert.html")
-
-
-@app.route("/button")
-def button():
-    return render_template("button.html")
-
-
-@app.route("/dropdowns")
-def dropdowns():
-    return render_template("dropdowns.html")
-
-
-@app.route("/jumbotron")
-def jumbotron():
-    return render_template("jumbotron.html")
-
-
-@app.route("/breadcrumb")
-def breadcrumb():
-    return render_template("breadcrumb.html")
+@app.route("/popovers")
+def popovers():
+    return render_template("popovers.html")
 
 
 @app.route("/modal")

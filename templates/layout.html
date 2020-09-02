@@ -50,67 +50,57 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="{{url_for('index')}}">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{url_for('index')}}">Home<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{url_for('carousel')}}">Carousel</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{url_for('table')}}">Table</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{url_for('list')}}">List</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{url_for('form')}}">Form</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{url_for('media')}}">Media</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{url_for('card')}}">Card</a>
+                        <a class="nav-link" href="{{url_for('login')}}">Login<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown1
+                            Layout
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{url_for('navs')}}">Navs</a>
-                            <a class="dropdown-item" href="{{url_for('collapse')}}">Collapse</a>
+                            <a class="dropdown-item" href="{{url_for('carousel')}}">Carousel</a>
+                            <a class="dropdown-item" href="{{url_for('table')}}">Table</a>
+                            <a class="dropdown-item" href="{{url_for('list')}}">List</a>
+                            <a class="dropdown-item" href="{{url_for('card')}}">Card</a>
+                            <a class="dropdown-item" href="{{url_for('form')}}">Form</a>
+                            <a class="dropdown-item" href="{{url_for('media')}}">Media</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{url_for('popovers')}}">Popovers</a>
+                            <a class="dropdown-item" href="{{url_for('navs')}}">Navs</a>
+                            <a class="dropdown-item" href="{{url_for('scrollspy')}}">Scrollspy</a>
+                            <a class="dropdown-item" href="{{url_for('collapse')}}">Collapse</a>
+                            <a class="dropdown-item" href="{{url_for('pagination')}}">Pagination</a>
+                            <a class="dropdown-item" href="{{url_for('jumbotron')}}">Jumbotron</a>
+                            <a class="dropdown-item" href="{{url_for('breadcrumb')}}">Breadcrumb</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Components
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{url_for('button')}}">Button</a>
+                            <a class="dropdown-item" href="{{url_for('dropdowns')}}">Dropdowns</a>
                             <a class="dropdown-item" href="{{url_for('progress')}}">Progress</a>
                             <a class="dropdown-item" href="{{url_for('spinners')}}">Spinners</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown2
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{url_for('badge')}}">Badge</a>
-                            <a class="dropdown-item" href="{{url_for('pagination')}}">Pagination</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{url_for('scrollspy')}}">Scrollspy</a>
-                            <a class="dropdown-item" href="{{url_for('toasts')}}">Toasts</a>
-                            <a class="dropdown-item" href="{{url_for('tooltips')}}">Tooltips</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown3
+                            More
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{url_for('alert')}}">Alert</a>
-                            <a class="dropdown-item" href="{{url_for('button')}}">Button</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{url_for('dropdowns')}}">Dropdowns</a>
-                            <a class="dropdown-item" href="{{url_for('jumbotron')}}">Jumbotron</a>
-                            <a class="dropdown-item" href="{{url_for('breadcrumb')}}">Breadcrumb</a>
+                            <a class="dropdown-item" href="{{url_for('toasts')}}">Toasts</a>
+                            <a class="dropdown-item" href="{{url_for('tooltips')}}">Tooltips</a>
+                            <a class="dropdown-item" href="{{url_for('popovers')}}">Popovers</a>
                             <a class="dropdown-item" href="{{url_for('modal')}}">Modal</a>
+                            <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{url_for('utilities')}}">Utilities</a>
                         </div>
                     </li>
