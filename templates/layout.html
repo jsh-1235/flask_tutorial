@@ -25,6 +25,11 @@
     {% block stylesheet %}{% endblock %}
 
     <style>
+        body {
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+            color: #5a5a5a;
+        }
     </style>
 
     <script>
@@ -118,7 +123,7 @@
         </nav>
     </header>
 
-    <main role="main">
+    <main role="main" class="container">
         {% block content %}{% endblock %}
     </main>
 

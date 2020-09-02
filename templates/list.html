@@ -2,63 +2,63 @@
 
 {% block stylesheet %}
 <style>
- #horizontal-list-group {
+    #horizontal-list-group {
         flex-direction: row;
     }
 </style>
 {% endblock %}
 
 {% block script %}
-    <script>
-        $(document).ready(function () {
-            var title = "";
+<script>
+    $(document).ready(function () {
+        var title = "";
 
-            $('#btnHTML').click(function () {
-                console.log($(this).text())
+        $('#btnHTML').click(function () {
+            console.log($(this).text())
 
-                //title = $(this).attr("id");                            
-                title = $(this).text();
-            });
+            //title = $(this).attr("id");                            
+            title = $(this).text();
+        });
 
-            $('#btnCSS').click(function () {
-                title = $(this).text();
+        $('#btnCSS').click(function () {
+            title = $(this).text();
 
-                $('#exampleModal').modal('show')
-            });
+            $('#exampleModal').modal('show')
+        });
 
-            $('#btnJS').click(function () {
-                title = $(this).text();
+        $('#btnJS').click(function () {
+            title = $(this).text();
 
-                $('#exampleModal').modal('show')
-            });
+            $('#exampleModal').modal('show')
+        });
 
-            $('#btnPython').click(function () {
-                title = $(this).text();
+        $('#btnPython').click(function () {
+            title = $(this).text();
 
-                $('#exampleModal').modal('show')
-            });
+            $('#exampleModal').modal('show')
+        });
 
-            $('#exampleModal').on('show.bs.modal', function (e) {
-                //$("#modalContent").html($(this).attr("id"))
-                $("#modalContent").text(title)
-            })
+        $('#exampleModal').on('show.bs.modal', function (e) {
+            //$("#modalContent").html($(this).attr("id"))
+            $("#modalContent").text(title)
+        })
 
-            //===================================================================================
-            var count = [0, 0, 0];
+        //===================================================================================
+        var count = [0, 0, 0];
 
-            $('#list1').click(function () {
-                $('#span1').text(++count[0]);
-            });
+        $('#list1').click(function () {
+            $('#span1').text(++count[0]);
+        });
 
-            $('#list2').click(function () {
-                $('#span2').text(++count[1]);
-            });
+        $('#list2').click(function () {
+            $('#span2').text(++count[1]);
+        });
 
-            $('#list3').click(function () {
-                $('#span3').text(++count[2]);
-            });           
-        });    
-    </script>
+        $('#list3').click(function () {
+            $('#span3').text(++count[2]);
+        });
+    });    
+</script>
 
 {% endblock %}
 
@@ -106,7 +106,7 @@
     </div>
 </div>
 
-<div style="margin-top:56px;">
+<div>
     <div class="list-group list-group-flush">
         <button type="button" class="list-group-item list-group-item-action active" data-toggle="modal"
             data-target="#staticBackdrop">
