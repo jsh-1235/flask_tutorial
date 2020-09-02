@@ -8,13 +8,6 @@ from datetime import datetime
 
 app = Flask(__name__)
 
-
-@app.route("/")
-@app.route("/index")
-def index():
-    return render_template('index.html')
-
-
 posts = [
     {
         'author': {
@@ -40,35 +33,35 @@ images = [
         'title': '첫 번째 포스트',
         'content': '첫 번째 포스트 내용입니다.',
         'source': "https://placeimg.com/640/320/any/1",
-        'date' : "2020-09-01"
+        'date': "2020-09-01"
     },
     {
         'id': 2,
         'title': '두 번째 포스트',
         'content': '두 번째 포스트 내용입니다.',
         'source': "https://placeimg.com/640/320/any/2",
-        'date' : "2020-09-02"
+        'date': "2020-09-02"
     },
     {
         'id': 3,
         'title': '세 번째 포스트',
         'content': '세 번째 포스트 내용입니다.',
         'source': "https://placeimg.com/640/320/any/3",
-        'date' : "2020-09-03"
+        'date': "2020-09-03"
     },
     {
         'id': 4,
         'title': '네 번째 포스트',
         'content': '네 번째 포스트 내용입니다.',
         'source': "https://placeimg.com/640/320/any/4",
-        'date' : "2020-09-04"
+        'date': "2020-09-04"
     },
     {
         'id': 5,
         'title': '다섯 번째 포스트',
         'content': '다섯 번째 포스트 내용입니다.',
         'source': "https://placeimg.com/640/320/any/5",
-        'date' : "2020-09-05"
+        'date': "2020-09-05"
     }
 ]
 
@@ -90,11 +83,10 @@ images = [
 #     }
 # ]
 
-
-@app.route("/home")
-def home():
-    return render_template("home.html", title="Home", posts=posts)
-
+@app.route("/")
+@app.route("/index")
+def index():
+    return render_template('index.html')
 
 @app.route('/login')
 @app.route('/login/<username>')
@@ -122,11 +114,6 @@ def login(username=None):
 @app.route('/user/<username>')
 def profile(username):
     return '{}\'s profile'.format(escape(username))
-
-
-@app.route("/about")
-def about():
-    return render_template("about.html", title="About Page")
 
 
 @app.route("/carousel")
@@ -172,10 +159,64 @@ def components():
 def media():
     return render_template("media.html", images=images)
 
+@app.route("/card")
+def card():
+    return render_template("card.html", images=images)
 
-@app.route("/text")
-def text():
-    return render_template("text.html")
+
+@app.route("/navs")
+def navs():
+    return render_template("navs.html")
+
+
+@app.route("/collapse")
+def collapse():
+    return render_template("collapse.html")
+
+
+@app.route("/popovers")
+def popovers():
+    return render_template("popovers.html")
+
+
+@app.route("/progress")
+def progress():
+    return render_template("progress.html")
+
+
+@app.route("/spinners")
+def spinners():
+    return render_template("spinners.html")
+
+
+@app.route("/badge")
+def badge():
+    return render_template("badge.html")
+
+
+@app.route("/pagination")
+def pagination():
+    return render_template("pagination.html")
+
+
+@app.route("/scrollspy")
+def scrollspy():
+    return render_template("scrollspy.html")
+
+
+@app.route("/toasts")
+def toasts():
+    return render_template("toasts.html")
+
+
+@app.route("/tooltips")
+def tooltips():
+    return render_template("tooltips.html")
+
+
+@app.route("/alert")
+def alert():
+    return render_template("alert.html")
 
 
 @app.route("/button")
@@ -183,9 +224,29 @@ def button():
     return render_template("button.html")
 
 
-@app.route("/card")
-def card():
-    return render_template("card.html", images=images)
+@app.route("/dropdowns")
+def dropdowns():
+    return render_template("dropdowns.html")
+
+
+@app.route("/jumbotron")
+def jumbotron():
+    return render_template("jumbotron.html")
+
+
+@app.route("/breadcrumb")
+def breadcrumb():
+    return render_template("breadcrumb.html")
+
+
+@app.route("/modal")
+def modal():
+    return render_template("modal.html")
+
+
+@app.route("/utilities")
+def utilities():
+    return render_template("utilities.html")
 
 
 if __name__ == '__main__':

@@ -1,0 +1,319 @@
+{% extends 'layout.html' %}
+
+{% block stylesheet %}
+<style>
+    .span_size {
+        margin: 0px;
+        padding: 10px;
+        font-size: 64pt;
+    }
+</style>
+{% endblock %}
+
+{% block script %}
+<script>
+    $("#btnShow").click(function () {
+        $('#pic_1').removeClass('invisible')
+        $('#pic_1').addClass('visible')
+        $('#pic_2').removeClass('invisible')
+        $('#pic_2').addClass('visible')
+    })
+
+    $("#btnHide").click(function () {
+        $('#pic_1').removeClass('visible')
+        $('#pic_1').addClass('invisible')
+        $('#pic_2').removeClass('visible')
+        $('#pic_2').addClass('invisible')
+    })
+</script>
+{% endblock %}
+
+{% block content %}
+<div style="margin:100px;">
+    <div m-3>
+        <h1>Border</h1>
+        <div>
+            <span class="border span_size">A</span>
+            <span class="border-top span_size">A</span>
+            <span class="border-right span_size">A</span>
+            <span class="border-bottom span_size">A</span>
+            <span class="border-left span_size">A</span>
+        </div>
+        <div>
+            <span class="border-0 span_size">A</span>
+            <span class="border-top-0 span_size">A</span>
+            <span class="border-right-0 span_size">A</span>
+            <span class="border-bottom-0 span_size">A</span>
+            <span class="border-left-0 span_size">A</span>
+        </div>
+        <div>
+            <span class="border border-primary span_size">A</span>
+            <span class="border border-secondary span_size">A</span>
+            <span class="border border-success span_size">A</span>
+            <span class="border border-danger span_size">A</span>
+            <span class="border border-warning span_size">A</span>
+            <span class="border border-info span_size">A</span>
+            <span class="border border-light span_size">A</span>
+            <span class="border border-dark span_size">A</span>
+            <span class="border border-white span_size">A</span>
+        </div>
+    </div>
+    <hr />
+    <div m-3>
+        <h1>Clearfix</h1>
+        <div class="bg-info clearfix">
+            <button type="button" class="btn btn-secondary float-left">Example Button floated left</button>
+            <button type="button" class="btn btn-secondary float-right">Example Button floated right</button>
+        </div>
+    </div>
+    <hr />
+    <div m-3>
+        <h1>Close icon</h1>
+        <button type="button" class="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <hr />
+    <div m-3>
+        <h1>Color</h1>
+        <div>
+            <p class="text-primary">.text-primary</p>
+            <p class="text-secondary">.text-secondary</p>
+            <p class="text-success">.text-success</p>
+            <p class="text-danger">.text-danger</p>
+            <p class="text-warning">.text-warning</p>
+            <p class="text-info">.text-info</p>
+            <p class="text-light bg-dark">.text-light</p>
+            <p class="text-dark">.text-dark</p>
+            <p class="text-body">.text-body</p>
+            <p class="text-muted">.text-muted</p>
+            <p class="text-white bg-dark">.text-white</p>
+            <p class="text-black-50">.text-black-50</p>
+            <p class="text-white-50 bg-dark">.text-white-50</p>
+        </div>
+    </div>
+    <hr />
+    <div m-3>
+        <h1>Background color</h1>
+        <div>
+            <div class="p-3 mb-2 bg-primary text-white">.bg-primary</div>
+            <div class="p-3 mb-2 bg-secondary text-white">.bg-secondary</div>
+            <div class="p-3 mb-2 bg-success text-white">.bg-success</div>
+            <div class="p-3 mb-2 bg-danger text-white">.bg-danger</div>
+            <div class="p-3 mb-2 bg-warning text-dark">.bg-warning</div>
+            <div class="p-3 mb-2 bg-info text-white">.bg-info</div>
+            <div class="p-3 mb-2 bg-light text-dark">.bg-light</div>
+            <div class="p-3 mb-2 bg-dark text-white">.bg-dark</div>
+            <div class="p-3 mb-2 bg-white text-dark">.bg-white</div>
+            <div class="p-3 mb-2 bg-transparent text-dark">.bg-transparent</div>
+        </div>
+    </div>
+    <hr />
+    <div m-3>
+        <h1>Display property</h1>
+        <div class="d-inline p-2 bg-primary text-white">d-inline</div>
+        <div class="d-inline p-2 bg-dark text-white">d-inline</div>
+        <span class="d-block p-2 bg-primary text-white">d-block</span>
+        <span class="d-block p-2 bg-dark text-white">d-block</span>
+        <h1>Hiding elements</h1>
+        <div class="d-lg-none">hide on lg and wider screens</div>
+        <div class="d-none d-lg-block">hide on screens smaller than lg</div>
+        <h1>Display in print</h1>
+        <div class="d-print-none">Screen Only (Hide on print only)</div>
+        <div class="d-none d-print-block">Print Only (Hide on screen only)</div>
+        <div class="d-none d-lg-block d-print-block">Hide up to large on screen, but always show on print</div>
+    </div>
+    <div m-3>
+        <h1>Flex</h1>
+        <div class="d-flex flex-row bd-highlight mb-3">
+            <div class="p-2 bd-highlight">Flex item 1</div>
+            <div class="p-2 bd-highlight">Flex item 2</div>
+            <div class="p-2 bd-highlight">Flex item 3</div>
+        </div>
+        <div class="d-flex flex-row-reverse bd-highlight">
+            <div class="p-2 bd-highlight">Flex item 1</div>
+            <div class="p-2 bd-highlight">Flex item 2</div>
+            <div class="p-2 bd-highlight">Flex item 3</div>
+        </div>
+    </div>
+    <div m-3>
+        <h1>Float</h1>
+        <div class="float-left">Float left on all viewport sizes</div><br>
+        <div class="float-right">Float right on all viewport sizes</div><br>
+        <div class="float-none">Don't float on all viewport sizes</div>
+    </div>
+    <div m-3>
+        <h1>Image replacement</h1>
+        <h1 class="text-hide" style="background-image: url('/static/images/bg1.jpg'); width: 640px; height: 320px;">
+            Bootstrap</h1>
+    </div>
+    <div m-3>
+        <h1>Interactions</h1>
+        <p class="user-select-all">This paragraph will be entirely selected when clicked by the user.</p>
+        <p class="user-select-auto">This paragraph has the default select behavior.</p>
+        <p class="user-select-none">This paragraph will not be selectable when clicked by the user.</p>
+    </div>
+    <div m-3>
+        <h1>Overflow</h1>
+        <div class="bd-example d-md-flex">
+            <div class="overflow-auto p-3 mb-3 mb-md-0 mr-md-3 bg-light" style="max-width: 260px; max-height: 100px;">
+                This is an example of using <code>.overflow-auto</code> on an element with set width and height
+                dimensions. By design, this content will vertically scroll.
+            </div>
+            <div class="overflow-hidden p-3 bg-light" style="max-width: 260px; max-height: 100px;">
+                This is an example of using <code>.overflow-hidden</code> on an element with set width and height
+                dimensions.
+            </div>
+        </div>
+    </div>
+    <div m-3>
+        <h1>Position</h1>
+        <div class="position-static"><img src="../static/images/bg1.jpg" class="rounded mr-2" alt="..."
+                style="width: 100px;"></div>
+        <div class="position-relative"><img src="../static/images/bg2.jpg" class="rounded mr-2" alt="..."
+                style="width: 100px;"></div>
+        <div class="position-absolute"><img src="../static/images/bg3.jpg" class="rounded mr-2" alt="..."
+                style="width: 100px;"></div>
+        <div class="position-fixed"><img src="../static/images/bg1.jpg" class="rounded mr-2" alt="..."
+                style="width: 100px;"></div>
+        <div class="position-sticky"><img src="../static/images/bg2.jpg" class="rounded mr-2" alt="..."
+                style="width: 100px;"></div>
+    </div>
+    <div m-3>
+        <h1>Screen readers</h1>
+        <a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+    </div>
+    <div m-3>
+        <h1>Shadow</h1>
+        <div class="shadow-none p-3 mb-5 bg-light rounded">No shadow</div>
+        <div class="shadow-sm p-3 mb-5 bg-white rounded">Small shadow</div>
+        <div class="shadow p-3 mb-5 bg-white rounded">Regular shadow</div>
+        <div class="shadow-lg p-3 mb-5 bg-white rounded">Larger shadow</div>
+    </div>
+    <div m-3>
+        <h1>Sizing</h1>
+        <div class="w-25 p-3" style="background-color: #eee;">Width 25%</div>
+        <div class="w-50 p-3" style="background-color: #eee;">Width 50%</div>
+        <div class="w-75 p-3" style="background-color: #eee;">Width 75%</div>
+        <div class="w-100 p-3" style="background-color: #eee;">Width 100%</div>
+        <div class="w-auto p-3" style="background-color: #eee;">Width auto</div>
+        <div style="height: 100px; background-color: rgba(255,0,0,0.1);">
+            <div class="h-25 d-inline-block" style="width: 120px; background-color: rgba(0,0,255,.1)">Height 25%</div>
+            <div class="h-50 d-inline-block" style="width: 120px; background-color: rgba(0,0,255,.1)">Height 50%</div>
+            <div class="h-75 d-inline-block" style="width: 120px; background-color: rgba(0,0,255,.1)">Height 75%</div>
+            <div class="h-100 d-inline-block" style="width: 120px; background-color: rgba(0,0,255,.1)">Height 100%</div>
+            <div class="h-auto d-inline-block" style="width: 120px; background-color: rgba(0,0,255,.1)">Height auto
+            </div>
+        </div>
+    </div>
+    <div m-3>
+        <h1>Spacing</h1>
+        <div class="mx-auto" style="width: 200px;">
+            Centered element
+        </div>
+        <div class="row mx-md-n5">
+            <div class="col px-md-5">
+                <div class="p-3 border bg-light">Custom column padding</div>
+            </div>
+            <div class="col px-md-5">
+                <div class="p-3 border bg-light">Custom column padding</div>
+            </div>
+        </div>
+    </div>
+    <div m-3>
+        <h1>Stretched link</h1>
+        <div class="card" style="width: 18rem;">
+            <img src="../static/images/bg1.jpg" class="card-img-top" alt="..." style="width: 100px; height:auto;">
+            <div class="card-body">
+                <h5 class="card-title">Card with stretched link</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                <a href="index" class="btn btn-primary stretched-link">Go somewhere</a>
+            </div>
+        </div>
+    </div>
+    <div m-3>
+        <h1>Text</h1>
+        <div>
+            <p class="text-justify">Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet
+                fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex
+                communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem
+                certam indicere. Cras mattis iudicium purus sit amet fermentum.</p>
+        </div>
+        <div class="badge badge-primary text-wrap" style="width: 6rem;">
+            This text should wrap.
+        </div>
+
+        <!-- Block level -->
+        <div class="row">
+            <div class="col-2 text-truncate">
+                Praeterea iter est quasdam res quas ex communi.
+            </div>
+        </div>
+
+        <!-- Inline level -->
+        <span class="d-inline-block text-truncate" style="max-width: 150px;">
+            Praeterea iter est quasdam res quas ex communi.
+        </span>
+
+        <p class="text-break">
+            mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm</p>
+        <div>
+            <p class="text-lowercase">Lowercased text.</p>
+            <p class="text-uppercase">Uppercased text.</p>
+            <p class="text-capitalize">CapiTaliZed text.</p>
+        </div>
+        <div>
+            <p class="font-weight-bold">Bold text.</p>
+            <p class="font-weight-bolder">Bolder weight text (relative to the parent element).</p>
+            <p class="font-weight-normal">Normal weight text.</p>
+            <p class="font-weight-light">Light weight text.</p>
+            <p class="font-weight-lighter">Lighter weight text (relative to the parent element).</p>
+            <p class="font-italic">Italic text.</p>
+        </div>
+        <p class="text-monospace">This is in monospace</p>
+        <p class="text-muted">
+            Muted text with a <a href="#" class="text-reset">reset link</a>.
+        </p>
+        <a href="#" class="text-decoration-none">Non-underlined link</a>
+    </div>
+    <div m-3>
+        <h1>Vertical align</h1>
+        <table class="border text-primary border-danger" style="height: 100px;">
+            <tbody>
+                <tr>
+                    <td class="align-baseline">baseline</td>
+                    <td class="align-top">top</td>
+                    <td class="align-middle">middle</td>
+                    <td class="align-bottom">bottom</td>
+                    <td class="align-text-top">text-top</td>
+                    <td class="align-text-bottom">text-bottom</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div m-3>
+        <h1>Visibility</h1>
+        <div id="pic_1" class="visible"><img src="../static/images/bg1.jpg" class="card-img-top" alt="..."
+                style="width: 100px; height:auto;"></div>
+        <div id="pic_2" class="invisible"><img src="../static/images/bg1.jpg" class="card-img-top" alt="..."
+                style="width: 100px; height:auto;"></div>
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <button id="btnShow" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top"
+                title="Tooltip on top">Show</button>
+            <button id="btnHide" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom"
+                title="Tooltip on bottom">Hide</button>
+        </div>
+    </div>
+    <div m-3>
+        <h1>Icons</h1>
+        <div>
+            <span class="fas fa-user"></span>
+            <i class="fab fa-adobe fa-2x"></i>
+            <i class="far fa-angry fa-5x" style="color:forestgreen;"></i>
+            <i class="fas fa-fax fa-10x" style="background-color: aqua;"></i>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
